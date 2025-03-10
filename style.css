@@ -13,19 +13,39 @@ body {
 
 .header {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
     position: absolute;
     top: 0;
+    left: 0;
+}
+
+#clock {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#date-info {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    font-size: 1.5rem;
 }
 
 .analog-clock {
     width: 90vw;
     height: 90vw;
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 500px;
+    max-height: 500px;
     border: 10px solid white;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    margin: auto;
+    margin-top: 120px;
 }
 
 .clock-face {
@@ -42,7 +62,7 @@ body {
     top: 50%;
     left: 50%;
     transform-origin: left;
-    transform: rotate(90deg);
+    transform: translate(-50%, -50%) rotate(90deg);
     transition: transform 0.1s linear;
 }
 
@@ -59,4 +79,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#toggleTheme {
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
