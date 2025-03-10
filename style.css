@@ -1,14 +1,15 @@
+/* Base Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    background-color: #36195B;
-    color: white;
+    background-color: #1a1a2e; /* Dark theme background */
+    color: #e6e6e6; /* Light text for dark theme */
     transition: background 0.3s, color 0.3s;
 }
 
 .light-mode {
-    background-color: #B9E9E9;
-    color: #00008B;
+    background-color: #f4f4f4; /* Light theme background */
+    color: #333333; /* Dark text for light theme */
 }
 
 .header {
@@ -30,18 +31,26 @@ body {
     font-size: 1.2rem;
 }
 
+/* Analog Clock */
 .analog-clock {
     width: 90vw;
     height: 90vw;
     max-width: 500px;
     max-height: 500px;
-    border: 10px solid white;
+    border: 15px solid #e94560; /* Clock border color */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     margin-top: 120px;
+    background-color: #16213e; /* Clock face color for dark theme */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.light-mode .analog-clock {
+    border-color: #ff6f61; /* Clock border color for light theme */
+    background-color: #ffffff; /* Clock face color for light theme */
 }
 
 .clock-face {
@@ -50,11 +59,12 @@ body {
     height: 100%;
 }
 
+/* Clock Hands */
 .hand {
     position: absolute;
     width: 50%;
     height: 4px;
-    background: white;
+    background: #e94560; /* Hand color for dark theme */
     top: 50%;
     left: 50%;
     transform-origin: left;
@@ -63,17 +73,17 @@ body {
 }
 
 .light-mode .hand {
-    background: #00008B;
+    background: #ff6f61; /* Hand color for light theme */
 }
 
 .hour-hand { width: 30%; height: 6px; }
 .minute-hand { width: 40%; height: 4px; }
-.second-hand { width: 50%; height: 2px; background: red; }
+.second-hand { width: 50%; height: 2px; background: #ff0000; }
 
 .center-dot {
     width: 10px;
     height: 10px;
-    background: white;
+    background: #e94560; /* Center dot color for dark theme */
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -82,14 +92,7 @@ body {
 }
 
 .light-mode .center-dot {
-    background: #00008B;
-}
-
-#toggleTheme {
-    font-size: 1.5rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+    background: #ff6f61; /* Center dot color for light theme */
 }
 
 /* Clock Numbers */
@@ -100,23 +103,36 @@ body {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
+    color: #e94560; /* Number color for dark theme */
     transform-origin: center;
-    color: white;
 }
 
-.number1 { transform: rotate(30deg) translateY(-200px); }
-.number2 { transform: rotate(60deg) translateY(-200px); }
-.number3 { transform: rotate(90deg) translateY(-200px); }
-.number4 { transform: rotate(120deg) translateY(-200px); }
-.number5 { transform: rotate(150deg) translateY(-200px); }
-.number6 { transform: rotate(180deg) translateY(-200px); }
-.number7 { transform: rotate(210deg) translateY(-200px); }
-.number8 { transform: rotate(240deg) translateY(-200px); }
-.number9 { transform: rotate(270deg) translateY(-200px); }
-.number10 { transform: rotate(300deg) translateY(-200px); }
-.number11 { transform: rotate(330deg) translateY(-200px); }
-.number12 { transform: rotate(360deg) translateY(-200px); }
-
 .light-mode .number {
-    color: #00008B;
+    color: #ff6f61; /* Number color for light theme */
+}
+
+.number1 { transform: rotate(30deg) translateY(-45%); }
+.number2 { transform: rotate(60deg) translateY(-45%); }
+.number3 { transform: rotate(90deg) translateY(-45%); }
+.number4 { transform: rotate(120deg) translateY(-45%); }
+.number5 { transform: rotate(150deg) translateY(-45%); }
+.number6 { transform: rotate(180deg) translateY(-45%); }
+.number7 { transform: rotate(210deg) translateY(-45%); }
+.number8 { transform: rotate(240deg) translateY(-45%); }
+.number9 { transform: rotate(270deg) translateY(-45%); }
+.number10 { transform: rotate(300deg) translateY(-45%); }
+.number11 { transform: rotate(330deg) translateY(-45%); }
+.number12 { transform: rotate(360deg) translateY(-45%); }
+
+/* Theme Toggle Button */
+#toggleTheme {
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #e94560; /* Button color for dark theme */
+}
+
+.light-mode #toggleTheme {
+    color: #ff6f61; /* Button color for light theme */
 }
