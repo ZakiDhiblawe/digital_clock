@@ -1,11 +1,11 @@
 function updateClock() {
     const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+    const hours = String(now.getHours()).padStart(2, '0'); // Ensure 2 digits
+    const minutes = String(now.getMinutes()).padStart(2, '0'); // Ensure 2 digits
+    const seconds = String(now.getSeconds()).padStart(2, '0'); // Ensure 2 digits
 
     // Update digital clock
-    document.getElementById("clock").textContent = now.toLocaleTimeString();
+    document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
 
     // Update day and date
     document.getElementById("today").textContent = "Today";
