@@ -8,8 +8,8 @@ function updateClock() {
     document.getElementById("clock").textContent = now.toLocaleTimeString();
 
     // Update day and date
-    document.getElementById("day").textContent = now.toLocaleDateString('en-US', { weekday: 'long' });
-    document.getElementById("date").textContent = now.toLocaleDateString('en-US');
+    document.getElementById("today").textContent = "Today";
+    document.getElementById("current-date").textContent = now.toLocaleDateString('en-US');
 
     // Update analog clock hands
     const hourDeg = (hours % 12) * 30 + minutes * 0.5;
@@ -24,11 +24,28 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// Theme Toggle
 document.getElementById("toggleTheme").addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
     const icon = document.querySelector(".icon");
-    icon.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+    icon.innerHTML = document.body.classList.contains("light-mode") ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 });
 
-// Simulated temperature (can be updated with API)
-document.getElementById("temperature").textContent = `🌡️ ${Math.floor(Math.random() * 10 + 20)}°C`;
+// Get Real Temperature from Browser Geolocation
+function getTemperature() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const apiKey = "YOUR_OPENWEATHERMAP_API_KEY"; // Replace with your API key
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
+            const data = await response.json();
+            const temp = Math.round(data.main.temp);
+            document.getElementById("temperature").textContent = `🌡️ ${temp}°C`;
+        });
+    } else {
+        document.getElementById("temperature").textContent = "🌡️ N/A";
+    }
+}
+
+getTemperature();
