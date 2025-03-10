@@ -1,22 +1,31 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #222;
+    background-color: #36195b;
     color: white;
     transition: background 0.3s, color 0.3s;
 }
 
-.container {
-    margin-top: 10vh;
+.light-mode {
+    background-color: #B9E9E9;
+    color: black;
+}
+
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
 }
 
 .analog-clock {
-    width: 150px;
-    height: 150px;
-    border: 5px solid white;
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
+    border: 10px solid white;
     border-radius: 50%;
     position: relative;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .clock-face {
@@ -28,48 +37,26 @@ body {
 .hand {
     position: absolute;
     width: 50%;
-    height: 2px;
+    height: 4px;
     background: white;
     top: 50%;
-    transform-origin: 100%;
+    left: 50%;
+    transform-origin: left;
     transform: rotate(90deg);
     transition: transform 0.1s linear;
 }
 
-.hour-hand { width: 40%; height: 4px; }
-.minute-hand { width: 50%; height: 3px; }
-.second-hand { width: 60%; height: 2px; background: red; }
+.hour-hand { width: 30%; height: 6px; }
+.minute-hand { width: 40%; height: 4px; }
+.second-hand { width: 50%; height: 2px; background: red; }
 
 .center-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: white;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-button {
-    padding: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-    border: none;
-    background: none;
-    font-size: 24px;
-}
-
-.light-mode {
-    background-color: white;
-    color: black;
-    border-color: black;
-}
-
-.light-mode .hand {
-    background: black;
-}
-
-.light-mode .second-hand {
-    background: red;
 }
