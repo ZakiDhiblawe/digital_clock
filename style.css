@@ -1,14 +1,20 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #36195b;
+    background-color: #36195B;
     color: white;
     transition: background 0.3s, color 0.3s;
 }
 
 .light-mode {
     background-color: #B9E9E9;
-    color: black;
+    color: #00008B;
+}
+
+/* Ensure dark mode is the default on first load */
+body:not(.light-mode) {
+    background-color: #36195B;
+    color: white;
 }
 
 .header {
@@ -66,6 +72,10 @@ body {
     transition: transform 0.1s linear;
 }
 
+.light-mode .hand {
+    background: #00008B;
+}
+
 .hour-hand { width: 30%; height: 6px; }
 .minute-hand { width: 40%; height: 4px; }
 .second-hand { width: 50%; height: 2px; background: red; }
@@ -79,6 +89,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.light-mode .center-dot {
+    background: #00008B;
 }
 
 #toggleTheme {
