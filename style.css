@@ -100,18 +100,23 @@ body {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    transform-origin: bottom center;
+    transform-origin: center;
+    color: white;
 }
 
-.number1 { transform: rotate(30deg); }
-.number2 { transform: rotate(60deg); }
-.number3 { transform: rotate(90deg); }
-.number4 { transform: rotate(120deg); }
-.number5 { transform: rotate(150deg); }
-.number6 { transform: rotate(180deg); }
-.number7 { transform: rotate(210deg); }
-.number8 { transform: rotate(240deg); }
-.number9 { transform: rotate(270deg); }
-.number10 { transform: rotate(300deg); }
-.number11 { transform: rotate(330deg); }
-.number12 { transform: rotate(360deg); }
+.number1 { transform: rotate(30deg) translateY(-200px); }
+.number2 { transform: rotate(60deg) translateY(-200px); }
+.number3 { transform: rotate(90deg) translateY(-200px); }
+.number4 { transform: rotate(120deg) translateY(-200px); }
+.number5 { transform: rotate(150deg) translateY(-200px); }
+.number6 { transform: rotate(180deg) translateY(-200px); }
+.number7 { transform: rotate(210deg) translateY(-200px); }
+.number8 { transform: rotate(240deg) translateY(-200px); }
+.number9 { transform: rotate(270deg) translateY(-200px); }
+.number10 { transform: rotate(300deg) translateY(-200px); }
+.number11 { transform: rotate(330deg) translateY(-200px); }
+.number12 { transform: rotate(360deg) translateY(-200px); }
+
+.light-mode .number {
+    color: #00008B;
+}
