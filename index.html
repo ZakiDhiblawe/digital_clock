@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Clock with Theme Toggle</title>
+    <title>Digital & Analog Clock with Theme Toggle</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <div class="container">
+        <div class="analog-clock">
+            <div class="clock-face">
+                <div class="hand hour-hand"></div>
+                <div class="hand minute-hand"></div>
+                <div class="hand second-hand"></div>
+                <div class="center-dot"></div>
+            </div>
+        </div>
         <h1 id="clock">00:00:00</h1>
-        <button id="toggleTheme">Toggle Light/Dark Mode</button>
+        <p id="date">January 1, 2025</p>
+        <button id="toggleTheme">
+            <span class="icon">🌙</span>
+        </button>
     </div>
 </body>
 </html>
