@@ -31,21 +31,11 @@ document.getElementById("toggleTheme").addEventListener("click", () => {
     icon.innerHTML = document.body.classList.contains("light-mode") ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 });
 
-// Get Real Temperature from Browser Geolocation
-function getTemperature() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(async (position) => {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-            const apiKey = "YOUR_OPENWEATHERMAP_API_KEY"; // Replace with your API key
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
-            const data = await response.json();
-            const temp = Math.round(data.main.temp);
-            document.getElementById("temperature").textContent = `🌡️ ${temp}°C`;
-        });
-    } else {
-        document.getElementById("temperature").textContent = "🌡️ N/A";
-    }
+// Random Temperature Generator
+function getRandomTemperature() {
+    const temp = Math.floor(Math.random() * 20 + 10); // Random temp between 10°C and 30°C
+    document.getElementById("temperature").textContent = `🌡️ ${temp}°C`;
 }
 
-getTemperature();
+getRandomTemperature();
+setInterval(getRandomTemperature, 60000); // Update temperature every minute
